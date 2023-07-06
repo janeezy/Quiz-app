@@ -31,7 +31,110 @@ const quizData = [
 		d: 'none of the above',
 		correct: 'b',
 	},
+
+	{
+		question:
+			'Which programming language is known as the "mother of all languages"?',
+		a: 'Python',
+		b: 'JavaScript',
+		c: 'C++',
+		d: 'Assembly',
+		correct: 'd',
+	},
+	{
+		question: 'What is the result of the following expression: 5 + "5"?',
+		a: '10',
+		b: '55',
+		c: 'Error',
+		d: 'NaN',
+		correct: 'b',
+	},
+	{
+		question: 'Which of the following is NOT a JavaScript framework?',
+		a: 'React',
+		b: 'Angular',
+		c: 'Vue',
+		d: 'Java',
+		correct: 'd',
+	},
+	{
+		question:
+			'What is the CSS property used to set the spacing between lines of text?',
+		a: 'line-spacing',
+		b: 'letter-spacing',
+		c: 'text-spacing',
+		d: 'line-height',
+		correct: 'd',
+	},
+	{
+		question: 'What is the purpose of the <canvas> element in HTML5?',
+		a: 'To display images',
+		b: 'To draw graphics',
+		c: 'To play audio files',
+		d: 'To style web pages',
+		correct: 'b',
+	},
+	{
+		question: 'What does the acronym AJAX stand for?',
+		a: 'Asynchronous JavaScript And XML',
+		b: 'Advanced JavaScript And XHTML',
+		c: 'Asynchronous JSON And XML',
+		d: 'Advanced JSON And XHTML',
+		correct: 'a',
+	},
+
+	{
+		question: 'What is the output of the following code? console.log(2 + "2");',
+		a: '4',
+		b: '22',
+		c: 'NaN',
+		d: 'TypeError',
+		correct: 'b',
+	},
+	{
+		question: 'What is the result of the following expression: 3 + 2 + "7"?',
+		a: '57',
+		b: '12',
+		c: '37',
+		d: '7',
+		correct: 'c',
+	},
+	{
+		question: 'Which of the following is not a valid JavaScript loop?',
+		a: 'for',
+		b: 'while',
+		c: 'do...while',
+		d: 'repeat...until',
+		correct: 'd',
+	},
+	{
+		question: 'What does the "this" keyword refer to in JavaScript?',
+		a: 'The current function',
+		b: 'The global object',
+		c: 'The previous object',
+		d: 'The current object',
+		correct: 'd',
+	},
+	{
+		question:
+			'Which method is used to remove the first element from an array in JavaScript?',
+		a: 'pop()',
+		b: 'shift()',
+		c: 'splice()',
+		d: 'slice()',
+		correct: 'b',
+	},
+	{
+		question: 'What does the JavaScript function setInterval() do?',
+		a: 'Executes a function repeatedly at specified intervals',
+		b: 'Clears a timer set by setInterval()',
+		c: 'Pauses the execution of a function for a specified time',
+		d: 'Executes a function once after a specified delay',
+		correct: 'a',
+	},
 ];
+
+// Rest of the code...
 
 const quiz = document.getElementById('quiz');
 const answerElements = document.querySelectorAll('.answer');
