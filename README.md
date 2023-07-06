@@ -1,0 +1,1 @@
+#A simple quiz app that verifies the accuracy of the user’s response and offers a collection of questions and answers that have been carefully chosen Using dynamic programming, it moves through the questions.
