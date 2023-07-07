@@ -352,8 +352,51 @@ const quizData = [
 		d: 'Declares an object',
 		correct: 'a',
 	},
-];
 
+	// Additional questions
+	{
+		question: 'What is the CSS box model?',
+		a: 'A model that describes how elements are visually displayed on the web page',
+		b: 'A model that defines the layout and positioning of elements in a web page',
+		c: 'A model that represents the content, padding, border, and margin of an element',
+		d: 'A model that determines the color and typography of elements in a web page',
+		correct: 'c',
+	},
+	{
+		question: 'What is the purpose of media queries in CSS?',
+		a: 'To add animation effects to web pages',
+		b: 'To define the structure and layout of a web page',
+		c: 'To apply different styles based on the characteristics of the device or viewport',
+		d: 'To optimize images for better performance',
+		correct: 'c',
+	},
+	{
+		question: 'What is the role of JavaScript in frontend development?',
+		a: 'To create the visual layout of a web page',
+		b: 'To define the styling and appearance of elements on a web page',
+		c: 'To handle user interactions and dynamic behavior of a web page',
+		d: 'To store and manage data on the server side',
+		correct: 'c',
+	},
+	{
+		question: 'What is the purpose of the <meta> tag in HTML?',
+		a: 'To define a section within a web page',
+		b: 'To create a hyperlink to another web page',
+		c: 'To specify the character encoding and viewport settings',
+		d: 'To add images and multimedia content to a web page',
+		correct: 'c',
+	},
+	{
+		question: 'What is the role of a CSS preprocessor like Sass or Less?',
+		a: 'To define the layout and structure of a web page',
+		b: 'To optimize the performance of a web page',
+		c: 'To generate responsive designs for different devices',
+		d: 'To enhance the capabilities of CSS with variables, mixins, and functions',
+		correct: 'd',
+	},
+
+	// Add more questions here...
+];
 
 // Add more questions here...
 
