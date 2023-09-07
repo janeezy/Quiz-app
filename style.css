@@ -1,160 +1,141 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+/* Global styles */
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
-link {
-	display: contents;
-}
 body {
-	background-color: #406fb673;
-	background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 100%);
-	font-family: 'Poppins', sans-serif;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	align-self: center;
-	height: 100vh;
-	overflow: hidden;
-	margin: 0;
-	scroll-behavior: smooth;
+    background-color: #dce2ed73;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 100%);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 100vh;
+    overflow: hidden;
 }
+
+/* Quiz container styles */
 .quiz-container {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-	width: 800px;
-	max-width: 195vw;
-	overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+    width: 100%;
+    max-width: 600px; /* Adjust this width for larger screens */
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on smaller screens */
 }
+
+/* Quiz header styles */
 .quiz-header {
-	padding: 4rem;
+    padding: 2rem;
 }
+
+/* Question styles */
 h2 {
-	padding: 1rem;
-	text-align: center;
-	margin: 0;
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
 }
+
+/* Answer list styles */
 ul {
-	list-style-type: none;
-	padding: 0;
-}
-ul li {
-	font-size: 1.2rem;
-	margin: 1rem 0;
-}
-ul li label {
-	cursor: pointer;
-}
-button {
-	background-color: #8e44ad;
-	color: #fff;
-	border: none;
-	display: block;
-	width: 100%;
-	cursor: pointer;
-	font-size: 1.1rem;
-	font-family: inherit;
-	padding: 1.3rem;
-}
-button:hover {
-	background-color: #732d91;
-}
-button:focus {
-	outline: none;
-	background-color: #5e3370;
-}
-
-.quiz-container {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-	width: 800px;
-	max-width: 95vw;
-	overflow: hidden;
-	height: fit-content;
-}
-
-.quiz-header {
-	padding: 4rem;
-}
-
-h2 {
-	padding: 1rem;
-	text-align: center;
-	margin: 0;
-}
-
-ul {
-	list-style-type: none;
-	padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 ul li {
-	font-size: 1.2rem;
-	margin: 1rem 0;
+    font-size: 1.2rem;
+    margin: 1rem 0;
 }
 
 ul li label {
-	cursor: pointer;
+    cursor: pointer;
 }
 
+/* Button styles */
 button {
-	background-color: #8e44ad;
-	color: #fff;
-	border: none;
-	display: block;
-	width: 100%;
-	cursor: pointer;
-	font-size: 1.1rem;
-	font-family: inherit;
-	padding: 1.3rem;
+    background-color: #8e44ad;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 1rem; /* Increase padding for better touch targets on mobile */
 }
 
 button:hover {
-	background-color: #3e912d;
+    background-color: #732d91;
 }
 
 button:focus {
-	outline: none;
-	background-color: #5e3370;
+    outline: none;
+    background-color: #5e3370;
 }
 
+/* Footer styles */
 .footer {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	top: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: auto;
 }
 
 p {
-	margin: 5px;
-	display: flex;
-	padding: 5px;
-	align-items: center;
+    margin: 5px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
 }
+
+/* Animation styles */
 .animation {
-	width: 300px;
-	height: 100px;
-	position: relative;
-	overflow: hidden;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .animation:before {
-	content: 'Sharpen Your Skills';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	animation: slide 5s linear infinite;
+    content: 'Sharpen Your Skills';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: slide 5s linear infinite;
 }
 
 @keyframes slide {
-	0% {
-		transform: translateX(100%);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .quiz-container {
+        margin: 10px;
+    }
+
+    .quiz-header {
+        padding: 1rem;
+    }
+
+    button {
+        padding: 1rem;
+    }
 }
