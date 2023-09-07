@@ -30,9 +30,92 @@ const frontendQuestions = [
         ],
         correctAnswer: 'A) To control the order of stacking elements'
     },
-    // Add more questions...
-    // Make sure to add a total of 100 questions
+    // Additional questions
+    {
+        question: 'What does HTML stand for?',
+        options: [
+            'A) Hyper Text Markup Language',
+            'B) Hyperlink and Text Markup Language',
+            'C) High-level Text Markup Language',
+            'D) Hyper Transfer Markup Language'
+        ],
+        correctAnswer: 'A) Hyper Text Markup Language'
+    },
+    {
+        question: 'What is the purpose of the HTML <head> element?',
+        options: [
+            'A) To define the main content of the webpage',
+            'B) To provide metadata about the document',
+            'C) To create a hyperlink',
+            'D) To display images'
+        ],
+        correctAnswer: 'B) To provide metadata about the document'
+    },
+    {
+        question: 'Which CSS property is used to change the text color of an element?',
+        options: [
+            'A) font-color',
+            'B) text-style',
+            'C) color',
+            'D) text-color'
+        ],
+        correctAnswer: 'C) color'
+    },
+    {
+        question: 'What does the "box-sizing" property in CSS control?',
+        options: [
+            'A) The size of the HTML box',
+            'B) The padding and border of an element',
+            'C) The size of an image',
+            'D) The margin of an element'
+        ],
+        correctAnswer: 'B) The padding and border of an element'
+    },
+    {
+        question: 'What is the purpose of the JavaScript "for" loop?',
+        options: [
+            'A) To create conditional statements',
+            'B) To iterate over a sequence of values',
+            'C) To define functions',
+            'D) To add styling to HTML elements'
+        ],
+        correctAnswer: 'B) To iterate over a sequence of values'
+    },
+    {
+        question: 'Which of the following is NOT a valid data type in JavaScript?',
+        options: [
+            'A) string',
+            'B) boolean',
+            'C) array',
+            'D) number'
+        ],
+        correctAnswer: 'C) array'
+    },
+    {
+        question: 'What is the purpose of the "addEventListener" method in JavaScript?',
+        options: [
+            'A) To create a new variable',
+            'B) To add event handlers to HTML elements',
+            'C) To display a message in the console',
+            'D) To change the background color of a webpage'
+        ],
+        correctAnswer: 'B) To add event handlers to HTML elements'
+    },
+    {
+        question: 'Which CSS property is used to control the layout of elements in a grid?',
+        options: [
+            'A) flex',
+            'B) grid',
+            'C) layout',
+            'D) box'
+        ],
+        correctAnswer: 'B) grid'
+    }
+    // Add more questions as needed
 ];
+
+    // Make sure to add a total of 100 questions
+
 
 // Define your QuizApp class
 class QuizApp {
@@ -70,7 +153,7 @@ class QuizApp {
         // Update the question and options
         this.questionElement.textContent = questionData.question;
         const options = questionData.options.slice(); // Create a copy to avoid modifying the original array
-        options.sort(() => Math.random() - 0.5); // Shuffle options
+        options.sort(() => Math.random() - 60); // Shuffle options
         this.answerElements.forEach((element, index) => {
             element.nextElementSibling.textContent = options[index];
         });
@@ -96,7 +179,7 @@ class QuizApp {
     }
 
     startTimer() {
-        let timeLeft = 10;
+        let timeLeft = 60;
         const timerElement = document.getElementById('timer');
 
         this.timerInterval = setInterval(() => {

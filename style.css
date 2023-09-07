@@ -4,9 +4,20 @@
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 3px;
 }
+/* Enable smooth scrolling for the entire document */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optionally, you can apply smooth scrolling to specific elements by targeting their IDs or classes */
+/* Example: Smooth scrolling for an element with the ID "quiz" */
+#quiz {
+    scroll-behavior: smooth;
+}
+
 
 body {
     background-color: #dce2ed73;
@@ -39,29 +50,23 @@ body {
     padding: 2rem;
 }
 
-/* Question styles */
+/* Animation for the header text */
 h2 {
     padding: 1rem;
     text-align: center;
     margin: 0;
+    animation: fadeIn 1s ease-in-out; /* Example animation */
 }
 
-/* Answer list styles */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
+/* Animation for the answers */
 ul li {
     font-size: 1.2rem;
     margin: 1rem 0;
+    opacity: 0;
+    animation: slideInRight 0.5s ease-in-out forwards; /* Example animation */
 }
 
-ul li label {
-    cursor: pointer;
-}
-
-/* Button styles */
+/* Animation for the submit button */
 button {
     background-color: #8e44ad;
     color: #fff;
@@ -71,7 +76,37 @@ button {
     cursor: pointer;
     font-size: 1.1rem;
     font-family: inherit;
-    padding: 1rem; /* Increase padding for better touch targets on mobile */
+    padding: 1.3rem;
+    animation: bounce 0.5s infinite; /* Example animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 button:hover {
