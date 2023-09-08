@@ -26,6 +26,7 @@
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    scroll-behavior: smooth;
 }
 
 /* Style for the scroll up button */
@@ -35,6 +36,7 @@
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -42,6 +44,7 @@
     scroll-behavior: smooth;
     margin: 5px;
     padding: 3px;
+
 }
 /* Enable smooth scrolling for the entire document */
 html {
@@ -64,7 +67,7 @@ body {
     align-items: center;
     justify-content: center;
     align-self: center;
-    height: 100vh;
+    height: 130vh;
     overflow: hidden;
     scroll-behavior: smooth;
 }
@@ -81,6 +84,8 @@ body {
     margin: 20px;
     display: flex;
     flex-direction: column; /* Stack elements vertically on smaller screens */
+    scroll-behavior: smooth;
+
 }
 
 /* Quiz header styles */
@@ -97,6 +102,7 @@ h2 {
     align-items: center;
     justify-content: center;
     text-align: center;
+
 }
 
 /* Animation for the answers */
@@ -177,9 +183,8 @@ p {
 /* Animation styles */
 .animation {
     width: 100%;
-    height: auto;
     position: relative;
-    overflow: hidden;
+
 }
 
 .animation:before {
@@ -189,7 +194,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    animation: slide 5s linear infinite;
+    animation: slide 10s linear infinite;
 }
 
 @keyframes slide {
@@ -202,7 +207,7 @@ p {
 }
 
 /* Media queries for mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
     .quiz-container {
         margin: 10px;
     }
