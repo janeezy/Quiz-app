@@ -1,6 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
 /* Global styles */
+/* Style for the submit button */
+#submit {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style for the previous button */
+#prev {
+    background-color: #008CBA; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style for the scroll down button */
+#scrollDownButton {
+    background-color: #FF5733; /* Red-Orange */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style for the scroll up button */
+#scrollUpButton {
+    background-color: #3333FF; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -10,6 +46,7 @@
 /* Enable smooth scrolling for the entire document */
 html {
     scroll-behavior: smooth;
+    margin: 10px;
 }
 
 /* Optionally, you can apply smooth scrolling to specific elements by targeting their IDs or classes */
@@ -29,6 +66,7 @@ body {
     align-self: center;
     height: 100vh;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Quiz container styles */
@@ -37,7 +75,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
     width: 100%;
-    max-width: 600px; /* Adjust this width for larger screens */
+    max-width: 1800px; /* Adjust this width for larger screens */
     overflow: hidden;
     padding: 20px;
     margin: 20px;
@@ -53,9 +91,12 @@ body {
 /* Animation for the header text */
 h2 {
     padding: 1rem;
-    text-align: center;
-    margin: 0;
     animation: fadeIn 1s ease-in-out; /* Example animation */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 /* Animation for the answers */

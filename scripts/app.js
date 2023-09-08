@@ -1,3 +1,8 @@
+"use strict";
+// Add event listeners for scrolling up and down
+document.getElementById('scrollUpButton').addEventListener('click', () => quizApp.scrollUp());
+document.getElementById('scrollDownButton').addEventListener('click', () => quizApp.scrollDown());
+
 /// Define the array of frontend development questions and answers
 const frontendQuestions = [
     {
@@ -123,15 +128,19 @@ class QuizApp {
         this.questionElement = document.getElementById('question');
         this.answerElements = document.querySelectorAll('.answer');
         this.submitButton = document.getElementById('submit');
+        this.nextButton = document.getElementById('next'); // Add a reference to the "Next" button
         this.questions = frontendQuestions;
         this.questionIndex = 0;
         this.score = 0;
+        this.questionTimer = 2700; // 45 minutes in seconds (45 * 60)
+        this.overallTimer = 7200; // 2 hours in seconds (2 * 3600)
         this.timerInterval = null;
 
         this.shuffleQuestions();
         this.fetchQuizData();
 
         this.submitButton.addEventListener('click', () => this.checkAnswer());
+        this.nextButton.addEventListener('click', () => this.moveToNextQuestion()); // Add event listener for the "Next" button
     }
 
     shuffleQuestions() {
@@ -147,60 +156,86 @@ class QuizApp {
         } catch (error) {
             console.error('Error fetching quiz data:', error);
         }
+
     }
 
     updateQuestion(questionData) {
         // Update the question and options
         this.questionElement.textContent = questionData.question;
         const options = questionData.options.slice(); // Create a copy to avoid modifying the original array
-        options.sort(() => Math.random() - 60); // Shuffle options
+        options.sort(() => Math.random() - 10); // Shuffle options
         this.answerElements.forEach((element, index) => {
             element.nextElementSibling.textContent = options[index];
         });
         this.correctAnswer = questionData.correctAnswer;
+
     }
 
     checkAnswer() {
         // Check if the selected answer is correct
         const selectedAnswer = document.querySelector('.answer:checked');
-        if (selectedAnswer && selectedAnswer.nextElementSibling.textContent === this.correctAnswer) {
-            this.score++;
+        if (selectedAnswer) {
+            if (selectedAnswer.nextElementSibling.textContent === this.correctAnswer) {
+                this.score++;
+            }
         }
 
         // Move to the next question
-        this.questionIndex++;
-        if (this.questionIndex < this.questions.length) {
-            this.updateQuestion(this.questions[this.questionIndex]);
-        } else {
-            // Quiz completed
-            clearInterval(this.timerInterval);
-            alert(`Quiz completed! Your score: ${this.score}`);
-        }
+        this.moveToNextQuestion();
     }
 
     startTimer() {
-        let timeLeft = 60;
         const timerElement = document.getElementById('timer');
 
         this.timerInterval = setInterval(() => {
-            if (timeLeft > 0) {
-                timerElement.textContent = `Time Left: ${timeLeft} s`;
-                timeLeft--;
-            } else {
+            if (this.overallTimer <= 0) {
                 clearInterval(this.timerInterval);
-                alert('Time is up! Moving to the next question.');
-                this.questionIndex++;
-                if (this.questionIndex < this.questions.length) {
-                    this.updateQuestion(this.questions[this.questionIndex]);
-                } else {
-                    // Quiz completed
-                    alert(`Quiz completed! Your score: ${this.score}`);
-                }
+                this.showResult();
+            } else if (this.questionTimer <= 0) {
+                clearInterval(this.timerInterval);
+                this.moveToNextQuestion();
+            } else {
+                timerElement.textContent = `Time Left: ${this.formatTime(this.questionTimer)} (Overall: ${this.formatTime(this.overallTimer)})`;
+                this.questionTimer--;
+                this.overallTimer--;
             }
         }, 1000);
     }
 
-    // ... Rest of your QuizApp methods
+    formatTime(seconds) {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const remainingSeconds = seconds % 60;
+        return `${hours}:${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    }
+
+    moveToNextQuestion() {
+        clearInterval(this.timerInterval);
+        this.questionIndex++;
+
+        if (this.questionIndex < this.questions.length) {
+            this.updateQuestion(this.questions[this.questionIndex]);
+            this.questionTimer = 2700; // Reset the question timer to 45 minutes
+            this.startTimer();
+        } else {
+            this.showResult();
+        }
+    }
+
+    showResult() {
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = `Quiz completed! Your score: ${this.score}`;
+        // Optionally, you can also display the number of questions passed and failed.
+    }
+     // Add a method to handle scrolling up
+    scrollUp() {
+        window.scrollBy(0, -100); // Scroll up by 100 pixels (adjust as needed)
+    }
+     // Add a method to handle scrolling down
+    scrollDown() {
+        window.scrollBy(0, 100); // Scroll down by 100 pixels (adjust as needed)
+    }
+
 }
 
 // Create an instance of QuizApp
