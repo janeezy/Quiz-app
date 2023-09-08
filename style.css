@@ -42,6 +42,8 @@
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    margin: 4px;
+    padding: 4px;
 
 
 }
@@ -49,6 +51,7 @@
 html {
     scroll-behavior: smooth;
     margin: 10px;
+
 }
 
 /* Optionally, you can apply smooth scrolling to specific elements by targeting their IDs or classes */
@@ -66,7 +69,6 @@ body {
     align-items: center;
     justify-content: center;
     align-self: center;
-    height: 130vh;
     overflow: hidden;
     scroll-behavior: smooth;
 }
@@ -206,7 +208,7 @@ p {
 }
 
 /* Media queries for mobile responsiveness */
-@media (max-width: 868px) {
+@media (max-width: 568px) {
     .quiz-container {
         margin: 10px;
     }
