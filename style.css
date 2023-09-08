@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
 /* Global styles */
+/* Styles for scroll buttons */
+
+
+#scrollDownButton {
+    background-color: #b9bdc2;
+/* Blue color for scroll down button */
+}
+
 /* Style for the submit button */
 #submit {
     background-color: #4CAF50; /* Green */
@@ -40,10 +48,11 @@
 }
 
 * {
-    box-sizing: border-box;
+
     scroll-behavior: smooth;
     margin: 4px;
     padding: 4px;
+    font-size: 14px;
 
 
 }
@@ -51,6 +60,7 @@
 html {
     scroll-behavior: smooth;
     margin: 10px;
+    height: 100%;
 
 }
 
@@ -79,7 +89,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
     width: 100%;
-    max-width: 1800px; /* Adjust this width for larger screens */
+    height: 100%;
+    max-width: 2800px; /* Adjust this width for larger screens */
     overflow: hidden;
     padding: 20px;
     margin: 20px;
@@ -208,9 +219,10 @@ p {
 }
 
 /* Media queries for mobile responsiveness */
-@media (max-width: 568px) {
+@media (max-width: 368px) {
+
     .quiz-container {
-        margin: 10px;
+        margin: 5px;
     }
 
     .quiz-header {
@@ -220,4 +232,14 @@ p {
     button {
         padding: 1rem;
     }
+}
+
+/* Additional media queries for smaller screens if necessary */
+@media (max-width: 480px) {
+    /* Adjustments for screens up to 480px in width */
+    body {
+        font-size: 14px; /* Further reduce font size for smaller screens */
+    }
+
+    /* Add more adjustments for smaller screens as needed */
 }
